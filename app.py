@@ -55,6 +55,9 @@ st.markdown(
     .home-rule { border-top: 4px solid var(--primary-color); max-width: 5rem; margin: 2.4rem 0 1.5rem; }
     .home-panel { border-top: 1px solid var(--border-color, rgba(128, 128, 128, 0.25)); padding-top: 1rem; min-height: 8rem; }
     .home-panel-title { color: #a8c686; font-size: 1.05rem; font-weight: 750; margin-bottom: 0.5rem; }
+    .home-api { border: 1px solid var(--border-color, rgba(128, 128, 128, 0.25)); padding: 1.25rem; margin-top: 2rem; }
+    .home-api-title { color: #a8c686; font-size: 1.05rem; font-weight: 750; margin-bottom: 0.5rem; }
+    .home-api a { color: #a8c686 !important; font-weight: 750; }
     .about-intro { font-size: 1.25rem; line-height: 1.65; max-width: 52rem; }
     .about-link { color: #a8c686 !important; font-weight: 750; text-decoration: none; }
     .about-link:hover { text-decoration: underline; }
@@ -149,6 +152,10 @@ if selected_view == "home":
     feature_one.markdown('<div class="home-panel"><div class="home-panel-title">Consulta enfocada</div>Preguntá en lenguaje natural y recibí una respuesta contextualizada.</div>', unsafe_allow_html=True)
     feature_two.markdown('<div class="home-panel"><div class="home-panel-title">Chats separados</div>Cada conversación mantiene su propio historial.</div>', unsafe_allow_html=True)
     feature_three.markdown('<div class="home-panel"><div class="home-panel-title">Base documental</div>Las respuestas se generan a partir del material indexado.</div>', unsafe_allow_html=True)
+    st.markdown(
+        '<div class="home-api"><div class="home-api-title">Necesitás una API key de Groq</div>La clave es gratuita. Entrá a <a href="https://console.groq.com/keys" target="_blank">console.groq.com/keys</a>, iniciá sesión, seleccioná <strong>Create API Key</strong>, definí la caducidad y copiá la Secret Key. Luego pegala en el campo de API key de la barra lateral.<br><br><a href="https://github.com/alonns04/alberdi-bot/blob/main/docs/OBTENER_API_KEY_GROQ.md" target="_blank">Ver tutorial completo ↗</a></div>',
+        unsafe_allow_html=True,
+    )
 elif selected_view == "about":
     st.markdown('<h1 class="home-title">Sobre el proyecto</h1>', unsafe_allow_html=True)
     st.markdown(
@@ -171,7 +178,7 @@ elif selected_view == "about":
     st.markdown("**Cómo funciona**")
     st.write("La aplicación recupera fragmentos relevantes de la base vectorial, los incorpora como contexto y genera una respuesta con Groq. El historial se mantiene separado por conversación.")
 else:
-    st.markdown('<h1 class="home-title">Alberdi</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="home-title">Alberdi Bot</h1>', unsafe_allow_html=True)
     st.write('“La Constitución es la ley de las leyes”')
 
     if not groq_api_key.strip():
