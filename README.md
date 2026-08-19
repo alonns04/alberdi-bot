@@ -37,16 +37,6 @@ El sistema recupera fragmentos relevantes desde una base vectorial y genera resp
 
 La aplicación utiliza recuperación aumentada por documentos, historial de conversación y una interfaz web construida con Streamlit.
 
-## Objetivo
-
-Facilitar la consulta de material jurídico mediante:
-
-- Preguntas en lenguaje natural.
-- Búsqueda semántica sobre documentos indexados.
-- Recuperación de fragmentos relevantes.
-- Respuestas contextualizadas.
-- Conversaciones separadas por chat.
-
 ## API key de Groq
 
 Para utilizar el chat es necesario crear una API key de Groq. La creación de la clave es gratuita, de acuerdo con los límites y condiciones vigentes de Groq.
@@ -70,6 +60,18 @@ MODEL_GROQ=openai/gpt-oss-20b
 ```
 
 No compartas la clave ni la subas al repositorio. Si se expone, revocala y generá una nueva desde Groq.
+
+## Objetivo
+
+Facilitar la consulta de material jurídico mediante:
+
+- Preguntas en lenguaje natural.
+- Búsqueda semántica sobre documentos indexados.
+- Recuperación de fragmentos relevantes.
+- Respuestas contextualizadas.
+- Conversaciones separadas por chat.
+
+
 
 ## Funcionalidades
 
