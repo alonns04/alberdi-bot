@@ -100,7 +100,6 @@ if "conversation_id" not in st.session_state:
 views = {
     "home": "Home",
     "chat": "Chat",
-    "about": "Sobre el proyecto",
 }
 view_key = st.query_params.get("view", "home")
 if view_key not in views:
@@ -120,7 +119,7 @@ with st.sidebar:
             st.query_params["view"] = key
             st.rerun()
 
-    st.write("")
+    st.divider()
     if st.button("+ Crear chat nuevo", type="primary", use_container_width=True):
         st.session_state.messages = []
         st.session_state.conversation_id = str(uuid.uuid4())
@@ -141,28 +140,24 @@ if selected_view == "home":
         <div class="home-kicker">Constitución Nacional Argentina</div>
         <div class="home-title">La Constitución, más cerca de la pregunta.</div>
         <div class="home-copy">Alberdi Bot busca el contenido relevante en la base documental y lo convierte en una respuesta clara, con contexto y sin rodeos.</div>
-        <div class="home-rule"></div>
         """,
         unsafe_allow_html=True,
     )
-    st.markdown('<div class="home-mode-label">Modo</div><div class="home-mode">RAG documental</div>', unsafe_allow_html=True)
-    st.markdown("<div class=\"home-rule\"></div>", unsafe_allow_html=True)
-    st.divider()
-    feature_one, feature_two, feature_three = st.columns(3)
-    feature_one.markdown('<div class="home-panel"><div class="home-panel-title">Consulta enfocada</div>Preguntá en lenguaje natural y recibí una respuesta contextualizada.</div>', unsafe_allow_html=True)
-    feature_two.markdown('<div class="home-panel"><div class="home-panel-title">Chats separados</div>Cada conversación mantiene su propio historial.</div>', unsafe_allow_html=True)
-    feature_three.markdown('<div class="home-panel"><div class="home-panel-title">Base documental</div>Las respuestas se generan a partir del material indexado.</div>', unsafe_allow_html=True)
     st.markdown(
         '<div class="home-api"><div class="home-api-title">Necesitás una API key de Groq</div>La clave es gratuita. Entrá a <a href="https://console.groq.com/keys" target="_blank">console.groq.com/keys</a>, iniciá sesión, seleccioná <strong>Create API Key</strong>, definí la caducidad y copiá la Secret Key. Luego pegala en el campo de API key de la barra lateral.<br><br><a href="https://github.com/alonns04/alberdi-bot/blob/main/docs/OBTENER_API_KEY_GROQ.md" target="_blank">Ver tutorial completo ↗</a></div>',
         unsafe_allow_html=True,
     )
-elif selected_view == "about":
-    st.markdown('<h1 class="home-title">Sobre el proyecto</h1>', unsafe_allow_html=True)
+    st.markdown("<div class=\"home-rule\"></div>", unsafe_allow_html=True)
+    feature_one, feature_two, feature_three = st.columns(3)
+    feature_one.markdown('<div class="home-panel"><div class="home-panel-title">Consulta enfocada</div>Preguntá en lenguaje natural y recibí una respuesta contextualizada.</div>', unsafe_allow_html=True)
+    feature_two.markdown('<div class="home-panel"><div class="home-panel-title">Chats separados</div>Cada conversación mantiene su propio historial.</div>', unsafe_allow_html=True)
+    feature_three.markdown('<div class="home-panel"><div class="home-panel-title">Base documental</div>Las respuestas se generan a partir del material indexado.</div>', unsafe_allow_html=True)
+    st.markdown("<div class=\"home-rule\"></div>", unsafe_allow_html=True)
+    st.markdown('<h2 class="home-title">Sobre el proyecto</h2>', unsafe_allow_html=True)
     st.markdown(
         '<p class="about-intro">Alberdi Bot combina recuperación semántica de documentos con un modelo de lenguaje para explorar la Constitución Nacional y material jurídico relacionado.</p>',
         unsafe_allow_html=True,
     )
-    st.markdown("<div class=\"home-rule\"></div>", unsafe_allow_html=True)
     about_col, docs_col = st.columns(2, gap="large")
     with about_col:
         st.markdown(

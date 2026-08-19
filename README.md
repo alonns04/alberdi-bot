@@ -232,10 +232,5 @@ Luego ejecutá el proceso de indexación correspondiente para incorporarlos a Ch
 ## Consideraciones
 
 - La calidad de las respuestas depende de los documentos indexados.
-- El modelo debe estar habilitado para la API key utilizada.
 - ChromaDB y SQLite requieren almacenamiento persistente en producción.
 - La información generada no reemplaza asesoramiento jurídico profesional.
-
-## Repositorio
-
-[https://github.com/alonns04/alberdi-bot](https://github.com/alonns04/alberdi-bot)
