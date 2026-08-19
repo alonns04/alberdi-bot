@@ -9,7 +9,7 @@ El sistema recupera fragmentos relevantes desde una base vectorial y genera resp
 <p align="left">
 
 <a href="#instalacion-y-ejecucion">
-<img src="https://img.shields.io/badge/Demo-Local-28A745?logo=googlechrome&logoColor=white&style=for-the-badge" height="40">
+<img src="https://img.shields.io/badge/Demo-Online-28A745?logo=googlechrome&logoColor=white&style=for-the-badge" height="40">
 </a>
 
 <a href="https://github.com/alonns04/alberdi-bot">

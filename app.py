@@ -55,9 +55,28 @@ st.markdown(
     .home-rule { border-top: 4px solid var(--primary-color); max-width: 5rem; margin: 2.4rem 0 1.5rem; }
     .home-panel { border-top: 1px solid var(--border-color, rgba(128, 128, 128, 0.25)); padding-top: 1rem; min-height: 8rem; }
     .home-panel-title { color: #a8c686; font-size: 1.05rem; font-weight: 750; margin-bottom: 0.5rem; }
-    .home-api { border: 1px solid var(--border-color, rgba(128, 128, 128, 0.25)); padding: 1.25rem; margin-top: 2rem; }
-    .home-api-title { color: #a8c686; font-size: 1.05rem; font-weight: 750; margin-bottom: 0.5rem; }
-    .home-api a { color: #a8c686 !important; font-weight: 750; }
+    .home-api {
+        border: 1px solid #d66b5d;
+        border-left: 5px solid #b94135;
+        background: rgba(214, 107, 93, 0.09);
+        padding: 1.25rem;
+        margin-top: 2rem;
+    }
+    .home-api-title { color: #b94135; font-size: 1.05rem; font-weight: 750; margin-bottom: 0.5rem; }
+    .home-api a { color: #b94135 !important; font-weight: 750; }
+    [data-testid="stSidebar"] [data-testid="stTextInput"] input {
+        border: 2px solid #d66b5d !important;
+        background: rgba(214, 107, 93, 0.09) !important;
+        color: var(--text-color) !important;
+    }
+    [data-testid="stSidebar"] [data-testid="stTextInput"] input:focus {
+        border-color: #b94135 !important;
+        box-shadow: 0 0 0 2px rgba(185, 65, 53, 0.2) !important;
+    }
+    [data-testid="stSidebar"] [data-testid="stTextInput"] label {
+        color: #b94135 !important;
+        font-weight: 750;
+    }
     .about-intro { font-size: 1.25rem; line-height: 1.65; max-width: 52rem; }
     .about-link { color: #a8c686 !important; font-weight: 750; text-decoration: none; }
     .about-link:hover { text-decoration: underline; }
