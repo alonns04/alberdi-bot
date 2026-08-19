@@ -47,6 +47,30 @@ Facilitar la consulta de material jurídico mediante:
 - Respuestas contextualizadas.
 - Conversaciones separadas por chat.
 
+## API key de Groq
+
+Para utilizar el chat es necesario crear una API key de Groq. La creación de la clave es gratuita, de acuerdo con los límites y condiciones vigentes de Groq.
+
+Guía completa: [Cómo obtener una API key de Groq](docs/OBTENER_API_KEY_GROQ.md).
+
+Pasos resumidos:
+
+1. Entrar en [console.groq.com/keys](https://console.groq.com/keys).
+2. Iniciar sesión o crear una cuenta.
+3. Seleccionar **Create API Key**.
+4. Establecer el tiempo de caducidad.
+5. Copiar la **Secret Key**.
+6. Pegarla en el campo **API key de Groq** de la barra lateral.
+
+También puede configurarse mediante `constitucionbot/.env`:
+
+```env
+API_KEY_GROQ=tu_api_key_de_groq
+MODEL_GROQ=openai/gpt-oss-20b
+```
+
+No compartas la clave ni la subas al repositorio. Si se expone, revocala y generá una nueva desde Groq.
+
 ## Funcionalidades
 
 - Chat conversacional sobre la Constitución Nacional.
@@ -172,30 +196,6 @@ streamlit run app.py
 ```
 
 La aplicación estará disponible en `http://localhost:8501`.
-
-## API key de Groq
-
-Para utilizar el chat es necesario crear una API key de Groq. La creación de la clave es gratuita, de acuerdo con los límites y condiciones vigentes de Groq.
-
-Guía completa: [Cómo obtener una API key de Groq](docs/OBTENER_API_KEY_GROQ.md).
-
-Pasos resumidos:
-
-1. Entrar en [console.groq.com/keys](https://console.groq.com/keys).
-2. Iniciar sesión o crear una cuenta.
-3. Seleccionar **Create API Key**.
-4. Establecer el tiempo de caducidad.
-5. Copiar la **Secret Key**.
-6. Pegarla en el campo **API key de Groq** de la barra lateral.
-
-También puede configurarse mediante `constitucionbot/.env`:
-
-```env
-API_KEY_GROQ=tu_api_key_de_groq
-MODEL_GROQ=openai/gpt-oss-20b
-```
-
-No compartas la clave ni la subas al repositorio. Si se expone, revocala y generá una nueva desde Groq.
 
 ## Configuración RAG
 
