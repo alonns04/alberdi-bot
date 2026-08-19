@@ -26,6 +26,17 @@ def get_user_id(api_key: str) -> str:
     return hashlib.sha256(value.encode("utf-8")).hexdigest()
 
 
+def get_groq_api_key() -> str:
+    if "groq_api_key" not in st.session_state:
+        st.session_state.groq_api_key = os.getenv("API_KEY_GROQ", "").strip()
+    return st.session_state.groq_api_key.strip()
+
+st.set_page_config(
+    page_title="Alberdi BOT",
+    page_icon=os.path.join(ROOT_DIR, "assets", "alberdi_bot_logo.svg"),
+    layout="wide",
+)
+
 st.markdown(
     """
     <style>
@@ -124,6 +135,8 @@ view_key = st.query_params.get("view", "home")
 if view_key not in views:
     view_key = "home"
 
+get_groq_api_key()
+
 with st.sidebar:
     st.markdown('<h2 class="sidebar-brand">Alberdi Bot</h2>', unsafe_allow_html=True)
     st.caption("Asistente constitucional")
@@ -145,11 +158,15 @@ with st.sidebar:
         st.query_params["view"] = "chat"
         st.rerun()
 
-    groq_api_key = st.text_input(
+    st.text_input(
         "API key de Groq",
-        value=os.getenv("API_KEY_GROQ", ""),
         type="password",
+        key="groq_api_key",
+        placeholder="Pegá tu clave y presioná Enter",
+        help="La clave se mantiene solo durante esta sesión y no se guarda en el repositorio.",
     )
+
+groq_api_key = get_groq_api_key()
 
 if selected_view == "home":
     st.markdown(
@@ -195,16 +212,20 @@ else:
     st.markdown('<h1 class="home-title">Alberdi Bot</h1>', unsafe_allow_html=True)
     st.write('“La Constitución es la ley de las leyes”')
 
-    if not groq_api_key.strip():
+    if not groq_api_key:
         st.info("Agregá tu API key de Groq en la barra lateral para continuar.", icon="🗝️")
     else:
-        user_id = get_user_id(groq_api_key.strip())
+        st.success("API key cargada. Ya podés iniciar una conversación.")
+    user_id = get_user_id(groq_api_key) if groq_api_key else None
 
-        for message in st.session_state.messages:
-            with st.chat_message(message["role"]):
-                st.markdown(message["content"])
+    for message in st.session_state.messages:
+        with st.chat_message(message["role"]):
+            st.markdown(message["content"])
 
-        if prompt := st.chat_input("Escribí tu pregunta sobre la Constitución..."):
+    if prompt := st.chat_input("Escribí tu pregunta sobre la Constitución..."):
+        if not groq_api_key:
+            st.warning("Para enviar la pregunta, agregá tu API key de Groq en la barra lateral.")
+        else:
             st.session_state.messages.append({"role": "user", "content": prompt})
             with st.chat_message("user"):
                 st.markdown(prompt)
@@ -214,7 +235,7 @@ else:
                     result = get_pipeline().process(
                         prompt,
                         user_id=user_id,
-                        api_key=groq_api_key.strip(),
+                        api_key=groq_api_key,
                     )
                     answer = result.get("answer", "No se obtuvo respuesta.")
                     st.markdown(answer)

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Alberdi Bot</title>
+  <desc id="desc">Emblema de una columna constitucional sobre un libro abierto</desc>
+  <rect width="64" height="64" rx="14" fill="#173f3f"/>
+  <path d="M13 48h38" stroke="#e5b95c" stroke-width="4" stroke-linecap="round"/>
+  <path d="M17 44h30" stroke="#e5b95c" stroke-width="3" stroke-linecap="round"/>
+  <path d="M20 44V29m24 15V29" stroke="#f5d98c" stroke-width="3" stroke-linecap="round"/>
+  <path d="M17 28h30l-4-5H21z" fill="#e5b95c"/>
+  <path d="M25 23l7-7 7 7" fill="none" stroke="#f5d98c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M29 44V29m6 15V29" stroke="#e5b95c" stroke-width="2" stroke-linecap="round"/>
+  <path d="M16 49c7-3 12-3 16 0 4-3 9-3 16 0" fill="none" stroke="#f5d98c" stroke-width="2" stroke-linecap="round"/>
+</svg>
