@@ -16,16 +16,17 @@ El sistema recupera fragmentos relevantes desde una base vectorial y genera resp
 <img src="https://img.shields.io/badge/GitHub-Repositorio-181717?logo=github&logoColor=white&style=for-the-badge" height="40">
 </a>
 
+
+<a href="https://www.linkedin.com/in/claudiogabrielalonso/">
+<img src="https://img.shields.io/badge/LinkedIn-Perfil-0A66C2?logo=linkedin&logoColor=white&style=for-the-badge" height="40">
+</a>
+
 <a href="https://github.com/alonns04/alberdi-bot/tree/main/constitucionbot/src/pdf">
 <img src="https://img.shields.io/badge/PDFs-Documentos%20procesados-B85C38?logo=adobeacrobatreader&logoColor=white&style=for-the-badge" height="40">
 </a>
 
 <a href="docs/OBTENER_API_KEY_GROQ.md">
 <img src="https://img.shields.io/badge/API%20Key-Tutorial-6C5CE7?logo=key&logoColor=white&style=for-the-badge" height="40">
-</a>
-
-<a href="https://www.linkedin.com/in/claudiogabrielalonso/">
-<img src="https://img.shields.io/badge/LinkedIn-Perfil-0A66C2?logo=linkedin&logoColor=white&style=for-the-badge" height="40">
 </a>
 
 </p>
